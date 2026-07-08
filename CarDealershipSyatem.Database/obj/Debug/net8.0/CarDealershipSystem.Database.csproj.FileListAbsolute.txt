@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\bin\Debug\net8.0\CarDealershipSystem.Database.deps.json
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\bin\Debug\net8.0\CarDealershipSystem.Database.runtimeconfig.json
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\bin\Debug\net8.0\CarDealershipSystem.Database.dll
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\bin\Debug\net8.0\CarDealershipSystem.Database.pdb
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.AssemblyInfo.cs
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.dll
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\refint\CarDealershipSystem.Database.dll
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.pdb
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.genruntimeconfig.cache
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\ref\CarDealershipSystem.Database.dll

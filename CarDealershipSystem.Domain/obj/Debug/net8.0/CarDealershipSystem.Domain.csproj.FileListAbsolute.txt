@@ -13,3 +13,4 @@ C:\Users\User\Desktop\CDS\CarDealershipSystem.Domain\obj\Debug\net8.0\CarDealers
 C:\Users\User\Desktop\CDS\CarDealershipSystem.Domain\obj\Debug\net8.0\refint\CarDealershipSystem.Domain.dll
 C:\Users\User\Desktop\CDS\CarDealershipSystem.Domain\obj\Debug\net8.0\CarDealershipSystem.Domain.pdb
 C:\Users\User\Desktop\CDS\CarDealershipSystem.Domain\obj\Debug\net8.0\ref\CarDealershipSystem.Domain.dll
+C:\Users\User\Desktop\CDS\CarDealershipSystem.Domain\obj\Debug\net8.0\CarDealershipSystem.Domain.sourcelink.json

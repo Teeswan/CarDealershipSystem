@@ -12,3 +12,4 @@ C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\refint\C
 C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.pdb
 C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.genruntimeconfig.cache
 C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\ref\CarDealershipSystem.Database.dll
+C:\Users\User\Desktop\CDS\CarDealershipSyatem.Database\obj\Debug\net8.0\CarDealershipSystem.Database.sourcelink.json

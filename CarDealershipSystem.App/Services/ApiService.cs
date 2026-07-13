@@ -1,4 +1,5 @@
-﻿using CarDealershipSystem.Database.AppDbContextModels;
+﻿using System.Net.Http.Json;
+using CarDealershipSystem.Database.AppDbContextModels;
 using CarDealershipSystem.Domain;
 using CarDealershipSystem.Domain.Features.Cars.CarsModels;
 using CarDealershipSystem.Domain.Features.Categories.CategoriesModels;
@@ -18,6 +19,8 @@ public class ApiService
         _configration = configration;
         _baseUrl = _configration.GetValue<string>("BackendApiUrl")!;
     }
+
+    #region Categories
     public async Task<Result<CategoriesListResponseModel>> GetCategories(CategoriesListRequestModel requestModel)
     {
         var httpClient = _httpClientFactory.CreateClient();
@@ -25,12 +28,54 @@ public class ApiService
         string url = $"{ApiEndpoints.Categories}?pageNo={requestModel.PageNumber}&pageSize={requestModel.PageSize}";
 
         var response = await httpClient.GetAsync(url);
-
         var result = await response.Content.ReadFromJsonAsync<Result<CategoriesListResponseModel>>();
-
         return result!;
     }
 
+    public async Task<Result<CategoriesModel>> GetCategoryById(int id)
+    {
+        var httpClient = _httpClientFactory.CreateClient();
+        httpClient.BaseAddress = new Uri(_baseUrl);
+        string url = $"{ApiEndpoints.GetCategoryById}?id={id}";
+
+        var response = await httpClient.GetAsync(url);
+        var result = await response.Content.ReadFromJsonAsync<Result<CategoriesModel>>();
+        return result!;
+    }
+
+    public async Task<Result<string>> CreateCategory(CategoryCreateRequestModel requestModel)
+    {
+        var httpClient = _httpClientFactory.CreateClient();
+        httpClient.BaseAddress = new Uri(_baseUrl);
+
+        var response = await httpClient.PostAsJsonAsync(ApiEndpoints.CreateCategory, requestModel);
+        var result = await response.Content.ReadFromJsonAsync<Result<string>>();
+        return result!;
+    }
+
+    public async Task<Result<string>> UpdateCategory(CategoryUpdateRequestModel requestModel)
+    {
+        var httpClient = _httpClientFactory.CreateClient();
+        httpClient.BaseAddress = new Uri(_baseUrl);
+
+        var response = await httpClient.PutAsJsonAsync(ApiEndpoints.UpdateCategory, requestModel);
+        var result = await response.Content.ReadFromJsonAsync<Result<string>>();
+        return result!;
+    }
+
+    public async Task<Result<string>> DeleteCategory(int id)
+    {
+        var httpClient = _httpClientFactory.CreateClient();
+        httpClient.BaseAddress = new Uri(_baseUrl);
+        string url = $"{ApiEndpoints.DeleteCategory}?id={id}";
+
+        var response = await httpClient.DeleteAsync(url);
+        var result = await response.Content.ReadFromJsonAsync<Result<string>>();
+        return result!;
+    }
+    #endregion
+
+    #region Cars
     public async Task<Result<CarsListResponseModel>> GetCars(CarsListRequestModel requestModel)
     {
         var httpClient = _httpClientFactory.CreateClient();
@@ -41,7 +86,9 @@ public class ApiService
         var result = await response.Content.ReadFromJsonAsync<Result<CarsListResponseModel>>();
         return result!;
     }
+    #endregion
 
+    #region Features
     public async Task<Result<FeaturesListResponseModel>> GetFeatures(FeaturesListRequestModel requestModel)
     {
         var httpClient = _httpClientFactory.CreateClient();
@@ -52,6 +99,7 @@ public class ApiService
         var result = await response.Content.ReadFromJsonAsync<Result<FeaturesListResponseModel>>();
         return result!;
     }
+    #endregion
 
     public class ApiEndpoints
     {
@@ -62,6 +110,7 @@ public class ApiService
         public const string GetCategoryById = "api/categories/getbyid";
         public const string DeleteCategory = "api/categories/delete";
         #endregion
+
         #region Cars
         public const string Cars = "api/cars";
         public const string CreateCar = "api/cars/create";
@@ -69,6 +118,7 @@ public class ApiService
         public const string GetCarById = "api/cars/getbyid";
         public const string DeleteCar = "api/cars/delete";
         #endregion
+
         #region Features
         public const string Features = "api/features";
         public const string CreateFeature = "api/features/create";
@@ -77,5 +127,4 @@ public class ApiService
         public const string DeleteFeature = "api/features/delete";
         #endregion
     }
-
 }

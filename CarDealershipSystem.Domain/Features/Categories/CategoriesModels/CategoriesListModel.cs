@@ -19,3 +19,14 @@ public class CategoriesModel
     public string CategoryName { get; set; } = string.Empty;
 
 }
+
+public class CategoryCreateRequestModel
+{
+    public string CategoryName { get; set; } = string.Empty;
+}
+
+public class CategoryUpdateRequestModel
+{
+    public int CategoryId { get; set; }
+    public string CategoryName { get; set; } = string.Empty;
+}

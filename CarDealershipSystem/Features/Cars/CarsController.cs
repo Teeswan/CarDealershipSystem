@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CarDealershipSystem.Domain.Features.Cars;
-using CarDealershipSystem.Domain.Features.Cars.CarsModel;
+using CarDealershipSystem.Domain.Features.Cars.CarsModels;
 
 namespace CarDealershipSystem.Api.Features.Cars
 {

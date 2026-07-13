@@ -1,6 +1,6 @@
 ﻿using CarDealershipSystem.App.Services;
 using CarDealershipSystem.Domain;
-using CarDealershipSystem.Domain.Features.Cars.CarsModel;
+using CarDealershipSystem.Domain.Features.Cars.CarsModels;
 using Microsoft.AspNetCore.Components;
 
 namespace CarDealershipSystem.App.Components.Features.Cars;

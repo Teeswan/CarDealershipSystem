@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CarDealershipSystem.Domain.Features.Cars.CarsModel;
+namespace CarDealershipSystem.Domain.Features.Cars.CarsModels;
 
 public class CarsListRequestModel
 {

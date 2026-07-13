@@ -1,6 +1,7 @@
 ﻿using CarDealershipSystem.Database.AppDbContextModels;
 using CarDealershipSystem.Domain.Features.Categories.CategoriesModels;
 using CarDealershipSystem.Domain.Features.Features.FeaturesModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,13 @@ namespace CarDealershipSystem.Domain.Features.Features
         {
             try
             {
+                int pageNumber = request.PageNumber <= 0 ? 1 : request.PageNumber;
+                int pageSize = request.PageSize <= 0 ? 10 : request.PageSize;
+
                 var features = _appDbContext.Features
-                    .Skip((request.PageNumber - 1) * request.PageSize)
-                    .Take(request.PageSize)
+                    .AsNoTracking() 
+                    .Skip((pageNumber - 1) * pageSize)
+                    .Take(pageSize)
                     .ToList();
 
                 Result<FeaturesListResponseModel> result = new Result<FeaturesListResponseModel>

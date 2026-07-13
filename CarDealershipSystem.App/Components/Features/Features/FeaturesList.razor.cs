@@ -5,8 +5,9 @@ using CarDealershipSystem.Domain.Features.Features.FeaturesModels;
 
 namespace CarDealershipSystem.App.Components.Features.Features;
 
-public partial class FeaturesModelList : ComponentBase
+public partial class FeaturesList : ComponentBase
 {
+
     private FeaturesListRequestModel requestModel = new();
     private Result<FeaturesListResponseModel>? responseModel;
     private int rowNo = 0;

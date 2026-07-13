@@ -1,6 +1,6 @@
 ﻿using CarDealershipSystem.Database.AppDbContextModels;
 using CarDealershipSystem.Domain;
-using CarDealershipSystem.Domain.Features.Cars.CarsModel;
+using CarDealershipSystem.Domain.Features.Cars.CarsModels;
 using CarDealershipSystem.Domain.Features.Categories.CategoriesModels;
 using CarDealershipSystem.Domain.Features.Features.FeaturesModels;
 

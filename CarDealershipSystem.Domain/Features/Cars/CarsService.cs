@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using CarDealershipSystem.Database.AppDbContextModels;
-using CarDealershipSystem.Domain.Features.Cars.CarsModel;
+using CarDealershipSystem.Domain.Features.Cars.CarsModels;
 
 namespace CarDealershipSystem.Domain.Features.Cars
 {

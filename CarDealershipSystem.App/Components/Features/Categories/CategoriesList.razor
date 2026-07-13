@@ -1,0 +1,26 @@
+﻿@page "/categories-list"
+@inject ApiService ApiService
+
+@if (responseModel.IsSuccess)
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>CategoryName</th>
+            </tr>
+        </thead>
+        <tbody>
+                @if (responseModel.Data is not null)
+                {
+                    @foreach (var item in responseModel.Data.Categories)
+                        {
+                            <tr>
+                                <td>@(++rowNo)</td>
+                                <td>@item.CategoryName</td>
+                            </tr>
+                        }
+                }
+        </tbody>
+    </table>
+}

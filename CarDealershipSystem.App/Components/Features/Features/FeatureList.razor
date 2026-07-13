@@ -1,0 +1,71 @@
+﻿@page "/features-list"
+@inject ApiService ApiService
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Vehicle Features & Specs</h2>
+        <button class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Add New Feature
+        </button>
+    </div>
+
+    @if (responseModel == null)
+    {
+        <div class="d-flex justify-content-center my-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading features...</span>
+            </div>
+        </div>
+    }
+    else if (!responseModel.IsSuccess)
+    {
+        <div class="alert alert-danger shadow-sm" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <strong>Error:</strong> @responseModel.Message
+        </div>
+    }
+    else if (responseModel.Data?.Features == null || !responseModel.Data.Features.Any())
+    {
+        <div class="alert alert-info shadow-sm text-center py-4" role="alert">
+            <i class="bi bi-info-circle fs-3 d-block mb-2"></i>
+            No features found in the system.
+        </div>
+    }
+    else
+    {
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <table class="table table-hover table-striped mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" style="width: 60px;">#</th>
+                            <th scope="col">Feature Name</th>
+                            <th scope="col" class="text-center" style="width: 150px;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @* Resets the counter securely on every UI rendering cycle *@
+                        @{
+                            rowNo = 0;
+                        }
+                        @foreach (var feature in responseModel.Data.Features)
+                        {
+                            <tr>
+                                <th scope="row">@(++rowNo)</th>
+                                <td>@feature.FeatureName</td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-secondary me-1" title="Edit">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+</div>

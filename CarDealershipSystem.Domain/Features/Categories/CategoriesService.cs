@@ -1,5 +1,6 @@
 ﻿using CarDealershipSystem.Database.AppDbContextModels;
 using CarDealershipSystem.Domain.Features.Categories.CategoriesModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,19 @@ public class CategoriesService
     {
         try
         {
-            var categories = _appDbContext.Categories
-                .Skip((request.PageNumber - 1) * request.PageSize)
-                .Take(request.PageSize)
+            int pageNumber = request.PageNumber <= 0 ? 1 : request.PageNumber;
+            int pageSize = request.PageSize <= 0 ? 10 : request.PageSize;
+
+            var query = _appDbContext.Categories
+                        .AsNoTracking()
+                        .Where(c => c.Categoryid > 0);
+
+            var categories = query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToList();
 
-            Result<CategoriesListResponseModel> result = new Result<CategoriesListResponseModel>
+            return new Result<CategoriesListResponseModel>
             {
                 IsSuccess = true,
                 Message = "Categories retrieved successfully.",
@@ -39,18 +47,14 @@ public class CategoriesService
                     }).ToList()
                 }
             };
-
-            return result;
         }
         catch (Exception ex)
         {
-            Result<CategoriesListResponseModel> result = new Result<CategoriesListResponseModel>
+            return new Result<CategoriesListResponseModel>
             {
                 IsSuccess = false,
                 Message = ex.Message,
             };
-
-            return result;
         }
     }
 }

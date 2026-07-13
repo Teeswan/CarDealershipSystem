@@ -137,7 +137,7 @@ namespace CarDealershipSystem.Domain.Features.Cars
                 return new Result<CarsListResponseModel>
                 {
                     IsSuccess = true,
-                    Data = new CarsListResponseModel { Items = items, TotalCount = totalCount, TotalPages = totalPages, CurrentPage = request.PageNumber }
+                    Data = new CarsListResponseModel { Cars = items, TotalCount = totalCount, TotalPages = totalPages, CurrentPage = request.PageNumber }
                 };
             }
             catch (Exception ex)

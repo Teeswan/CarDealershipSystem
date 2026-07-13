@@ -19,7 +19,7 @@ public class CarsListRequestModel
 
 public class CarsListResponseModel
 {
-    public List<CarsDataModel> Items { get; set; } = new List<CarsDataModel>();
+    public List<CarsDataModel> Cars { get; set; } = new List<CarsDataModel>();
     public int TotalCount { get; set; }
     public int TotalPages { get; set; }
     public int CurrentPage { get; set; }
